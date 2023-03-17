@@ -1,17 +1,16 @@
 import axios from "axios";
 
-const AsyncFonk = async ({ userID }) => {
-  return await new Promise((resolve, reject) => {
-    axios
-      .get(`https://jsonplaceholder.typicode.com/users/${userID}`)
-      .then((response) => {
-        console.log(response.data);
-        resolve(response.data);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
+const AsyncFonk = async (props) => {
+  try {
+    const response = await axios.get(
+      `https://jsonplaceholder.typicode.com/users/${props.userID}`
+    );
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
 };
 
 export default AsyncFonk;
