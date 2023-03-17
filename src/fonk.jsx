@@ -12,5 +12,7 @@ const AsyncFonk = async (props) => {
     return error;
   }
 };
-
+AsyncFonk.default = {
+  userID: 1,
+};
 export default AsyncFonk;

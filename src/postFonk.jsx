@@ -12,5 +12,7 @@ const postFonk = async (props) => {
     return error;
   }
 };
-
+postFonk.default = {
+  userID: 1,
+};
 export default postFonk;
